@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CodeSync Extension</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="container">
+        <div class="header"  id='headerid'>
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h2>CodeSync</h2>
+            </div>
+            <p class="subtitle">Sync your Codeforces solutions to GitHub</p>
+        </div>
+        <div id="loaderid" style="display: none;">
+            <div class="spinner"></div>
+            <div>pushing code to github</div>
+        </div>
+
+        <div id="login-section" class="section">
+            <div class="login-card">
+                <i class="fab fa-github"></i>
+                <h3>Welcome to CodeSync</h3>
+                <p>Connect your GitHub account to get started</p>
+                <button id="github-login" class="btn-github">
+                    <i class="fab fa-github"></i>
+                    Login with GitHub
+                </button>
+            </div>
+        </div>
+
+        <div id="main-section" class="section" style="display:none;">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="settings">
+                    <i class="fas fa-cog" id="setting"></i> Settings
+                </button>
+                <!-- <button class="tab-btn" data-tab="sync">
+                    <i class="fas fa-sync" id="sync"></i> Sync
+                </button> -->
+            </div>
+
+            <div id="settings-tab" class="tab-content active">
+                <form id="user-form">
+                    <div class="input-group">
+                        <label>
+                            <i class="fab fa-github"></i>
+                            GitHub Repository
+                        </label>
+                        <input type="text" id="repo-link" placeholder="username/repository" required>
+                        <i  id="inforepo">InValid GitHub Repository</i>
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <i class="fas fa-user"></i>
+                            Codeforces Handle
+                        </label>
+                        <input type="text" id="codeforces-username" placeholder="username" required>
+                        <i id="infohandle">InValid Codeforces Handle</i>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Settings
+                    </button>
+                </form>
+            </div>
+
+            <!-- <div id="sync-tab" class="tab-content">
+                <div class="sync-status">
+                    <div class="status-circle">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <p id="last-sync">Last synced: Never</p>
+                </div>
+                <button id="sync-now" class="btn-sync">
+                    <i class="fas fa-sync-alt"></i> Sync Now
+                </button>
+                <div class="sync-history">
+                    <h4>Recent Syncs</h4>
+                    <div id="sync-list">
+                        <!-- Dynamically populated -->
+                    <!-- </div>
+                </div>
+            </div> -->
+
+            <button id="logout" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

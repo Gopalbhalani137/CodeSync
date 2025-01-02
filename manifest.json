@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
+    "name": "CodeSync",
+    "version": "1.0",
+    "description": "Sync Codeforces solutions to GitHub repository",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "tabs",
+      "identity",
+      "scripting",
+      "contextMenus"
+    ],
+    "host_permissions": [
+      "https://codeforces.com/*",
+      "https://github.com/*",
+      "https://api.github.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.codeforces.com/contest/*/submission/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "oauth2": {
+      "client_id": "YOv23linFe8NC8J8rLBor",
+      "scopes": [  "repo" ],
+      "redirect_uri": ["https://abfpklcknikaplibgeooiklaajanfema.chromiumapp.org/"]
+    }
+  }
