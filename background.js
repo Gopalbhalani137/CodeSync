@@ -1,14 +1,6 @@
-// background.js
-
-// Initialize extension
-// background.js
-
 const initializeExtension = () => {
     console.log("Initializing background script...");
-
-    // Remove all existing context menu items
     chrome.contextMenus.removeAll(() => {
-        // Create "Change Settings" context menu
         chrome.contextMenus.create({
             id: 'changeSettings',
             title: 'Change Settings',
@@ -94,7 +86,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                 }
             }
         );
-        return true; // Keep message channel open for async response
+        return true; 
     }
 });
 
