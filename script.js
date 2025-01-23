@@ -27,7 +27,7 @@ const showLogin = getQueryParam('showLogin') === '1';
 
             loginSection.style.display = 'none';
             mainSection.style.display = 'none';
-            fetchAndPushSubmissions(data);
+            // fetchAndPushSubmissions(data);
         } else {
             headerid.style.display = 'block';
             loaderid.style.display = 'none';
@@ -45,7 +45,7 @@ const showLogin = getQueryParam('showLogin') === '1';
         loginButton.addEventListener('click', async () => {
             try {
                 // Fetch the GitHub OAuth authorization URL from the backend
-                const authUrlResponse = await fetch('http://localhost:5000/auth/github/url',{
+                const authUrlResponse = await fetch('https://codesync-b.onrender.com/auth/github/url',{
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -200,7 +200,7 @@ const showLogin = getQueryParam('showLogin') === '1';
         // Function to exchange GitHub OAuth code for access token
         async function exchangeCodeForToken(code) {
             try {
-                const response = await fetch('http://localhost:5000/auth/github', {
+                const response = await fetch('https://codesync-b.onrender.com/auth/github', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -247,7 +247,7 @@ const showLogin = getQueryParam('showLogin') === '1';
                 }
         
                 // Send the repository path and access token to the backend for validation
-                const response = await fetch('http://localhost:5000/validate-repo', {
+                const response = await fetch('https://codesync-b.onrender.com/validate-repo', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
