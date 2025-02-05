@@ -27,7 +27,7 @@ const showLogin = getQueryParam('showLogin') === '1';
 
             loginSection.style.display = 'none';
             mainSection.style.display = 'none';
-            // fetchAndPushSubmissions(data);
+            fetchAndPushSubmissions(data);
         } else {
             headerid.style.display = 'block';
             loaderid.style.display = 'none';
